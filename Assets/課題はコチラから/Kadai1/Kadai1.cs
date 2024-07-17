@@ -13,6 +13,9 @@ public class Kadai1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // 今回の課題はここをいじります↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+        // ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+
         // キーボード操作に追従して、カーソルが移動する.
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {

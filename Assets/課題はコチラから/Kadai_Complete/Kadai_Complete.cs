@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Kadai3 : MonoBehaviour
+public class Kadai_Complete : MonoBehaviour
 {
     private float _twinkTimer;
     private const float TWINK_TIME = 3.0f;
@@ -29,10 +29,6 @@ public class Kadai3 : MonoBehaviour
     {
         // カーソルが移動したときに走る処理.
         int menuItemNum = JJC_ShopUI.menu.GetMenuItemNum();
-        // 今回の課題はここをいじります↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
-        // ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
-
-        // ここでやっている処理は何？.
         if (menuItemPositionArray == null)
         {
             menuItemPositionArray = new Vector2[menuItemNum];
@@ -43,7 +39,6 @@ public class Kadai3 : MonoBehaviour
             }
         }
 
-        // ここでやっている処理は何？.
         for (int i = 0; i < menuItemNum; i++)
         {
             if (i == newCursorIndex)
@@ -56,6 +51,9 @@ public class Kadai3 : MonoBehaviour
                 JJC_ShopUI.menu.SetMenuItemPosition(i, menuItemPositionArray[i]);
             }
         }
+
+        // 新しく計算した位置の情報を、UIに対して渡す.
+        JJC_ShopUI.cursor.SetCurrentIndex(newCursorIndex);
     }
 
     void UpdateCursor()
@@ -85,10 +83,8 @@ public class Kadai3 : MonoBehaviour
             // 剰余の計算を行うことで、カーソル位置の値は一定範囲内に収まる.
             int adjustNewCursorIndex = (newCursorIndex + menuItemNum) % menuItemNum;
 
+            // カーソル移動したときに呼ぶ関数.
             OnCursorMove(adjustNewCursorIndex);
-
-            // 新しく計算した位置の情報を、UIに対して渡す.
-            JJC_ShopUI.cursor.SetCurrentIndex(adjustNewCursorIndex);
         }
     }
 

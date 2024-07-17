@@ -1,11 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
-    public int menuNum;
     public GameObject menuItemPrefab;
 
     private void Awake()
@@ -52,5 +52,17 @@ public class Menu : MonoBehaviour
         Vector3 screenCenter = new Vector3(Screen.width / 2.0f, Screen.height / 2.0f, 0.0f);
         Vector2 pos = transform.GetChild(index).transform.position + diffVec - screenCenter;
         return pos;
+    }
+
+    public Vector2 GetMenuItemPosition(int index)
+    {
+        RectTransform rectTrans = transform.GetChild(index).transform as RectTransform;
+        return rectTrans.anchoredPosition;
+    }
+
+    public void SetMenuItemPosition(int index, Vector2 newPosition)
+    {
+        RectTransform rectTrans = transform.GetChild(index).transform as RectTransform;
+        rectTrans.anchoredPosition = newPosition;
     }
 }

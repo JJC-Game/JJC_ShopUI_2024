@@ -16,6 +16,9 @@ public class Kadai2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // ¡‰ñ‚Ì‰Û‘è‚Í‚±‚±‚ð‚¢‚¶‚è‚Ü‚·««««««««««««««««««««««««««««««««««
+        // ««««««««««««««««««««««««««««««««««««««««««««««««
+
         // ƒJ[ƒ\ƒ‹‚ð–¾–Å‚³‚¹‚é.
         _twinkTimer += Time.deltaTime;
 
